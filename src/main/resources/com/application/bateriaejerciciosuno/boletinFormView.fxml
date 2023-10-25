@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.application.bateriaejerciciosuno.controllers.boletinFormController">
+<AnchorPane prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.application.bateriaejerciciosuno.controllers.BoletinFormController">
    <children>
       <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="417.0" prefWidth="711.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <Label alignment="CENTER" text="Introducir boletín" textAlignment="CENTER">
@@ -29,7 +29,7 @@
                                  <Font name="JetBrainsMono NFP ExtraBold" size="15.0" />
                               </font>
                            </Label>
-                           <TextField fx:id="nombreBoletinTextField" layoutY="30.0" prefHeight="30.0" prefWidth="270.0" styleClass="textFields" />
+                           <TextField fx:id="NombreTextField" layoutY="30.0" prefHeight="30.0" prefWidth="270.0" styleClass="textFields" />
                         </children>
                         <VBox.margin>
                            <Insets left="20.0" right="20.0" />
@@ -42,7 +42,7 @@
                                  <Font name="JetBrainsMono NFP ExtraBold" size="15.0" />
                               </font>
                            </Label>
-                           <TextField fx:id="fechaBoletinTextField" layoutY="30.0" prefHeight="30.0" prefWidth="270.0" styleClass="textFields" />
+                           <TextField fx:id="FechaTextField" layoutY="30.0" prefHeight="30.0" prefWidth="270.0" styleClass="textFields" />
                         </children>
                         <VBox.margin>
                            <Insets left="20.0" right="20.0" top="20.0" />
@@ -70,7 +70,7 @@
                                  <Font name="JetBrainsMono NFP ExtraBold" size="15.0" />
                               </font>
                            </Label>
-                           <TextField fx:id="numPaginasBoletinTextField" layoutY="30.0" prefHeight="30.0" prefWidth="270.0" styleClass="textFields" />
+                           <TextField fx:id="NumPaginasTextField" layoutY="30.0" prefHeight="30.0" prefWidth="270.0" styleClass="textFields" />
                         </children>
                         <VBox.margin>
                            <Insets left="20.0" right="20.0" />
@@ -83,7 +83,7 @@
                                  <Font name="JetBrainsMono NFP ExtraBold" size="15.0" />
                               </font>
                            </Label>
-                           <TextField fx:id="precioBoletinTextField" layoutY="30.0" prefHeight="30.0" prefWidth="270.0" styleClass="textFields" />
+                           <TextField fx:id="PrecioTextField" layoutY="30.0" prefHeight="30.0" prefWidth="270.0" styleClass="textFields" />
                         </children>
                         <VBox.margin>
                            <Insets left="20.0" right="20.0" top="20.0" />
@@ -91,7 +91,7 @@
                      </Group>
                      <HBox alignment="CENTER" prefHeight="140.0" prefWidth="311.0">
                         <children>
-                           <Button fx:id="enviarBoletinBttn" mnemonicParsing="false" prefHeight="32.0" prefWidth="228.0" styleClass="buttons" text="Introducir boletín">
+                           <Button onAction="#enviarBoletinBttn" mnemonicParsing="false" prefHeight="32.0" prefWidth="228.0" styleClass="buttons" text="Introducir boletín">
                               <HBox.margin>
                                  <Insets left="10.0" right="10.0" />
                               </HBox.margin>
@@ -99,7 +99,7 @@
                                  <Font name="JetBrainsMono NFP ExtraBold" size="15.0" />
                               </font>
                            </Button>
-                           <Button fx:id="cerrarVentanaBoletinBttn" mnemonicParsing="false" prefHeight="32.0" prefWidth="116.0" styleClass="buttons" text="Cerrar">
+                           <Button onAction="#cerrarVentanaBoletinBttn" mnemonicParsing="false" prefHeight="32.0" prefWidth="116.0" styleClass="buttons" text="Cerrar">
                               <HBox.margin>
                                  <Insets left="10.0" right="10.0" />
                               </HBox.margin>

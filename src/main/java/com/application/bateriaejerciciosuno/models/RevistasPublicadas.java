@@ -28,4 +28,14 @@ public class RevistasPublicadas extends ArticulosPublicados{
     public RevistasPublicadas() {
     }
 
+    @Override
+    public String toString() {
+        return "Titulo: " + titulo +
+                "\nNombre del autor: " + nombreAutor +
+                "\nCorreo: " + correo +
+                "\nEditorial: " + editorial +
+                "\nFormato: " + formato +
+                "\nNumero de paginas: " + NumeroDePaginas +
+                "\nPrecio: " + Precio + "€";
+    }
 }

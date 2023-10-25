@@ -7,7 +7,6 @@ import com.application.bateriaejerciciosuno.utils.ControllerUtils;
 import com.application.bateriaejerciciosuno.view.RevistaFormView;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
@@ -15,7 +14,8 @@ import javafx.scene.control.TextField;
 import javax.swing.*;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowFocusListener;
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashMap;
 
 public class RevistaFormController {
 
@@ -41,8 +41,7 @@ public class RevistaFormController {
         FormatoContainer.setValue("Elegir una opción");
     }
 
-
-    public void enviarRevistaBttn(ActionEvent actionEvent) {
+    public void enviarRevistaBttn() {
 
         HashMap<String, String> controlsMap = ControllerUtils.
                 saveDataToMap(Arrays.asList(
@@ -54,39 +53,25 @@ public class RevistaFormController {
                         PrecioTextField,
                         FormatoContainer));
 
-        controlsMap.forEach((key, value) -> System.out.println("id:\n" + key + "\nvalor:\n" + value));
-
         String fallos = CheckService.checkRevista(controlsMap, "Revista");
 
         if (!fallos.isEmpty()) {
-            JOptionPane panelError = new JOptionPane("Se han producido los siguientes errores:\n" + fallos, JOptionPane.ERROR_MESSAGE);
-            JDialog dialog = panelError.createDialog(null, "Error");
-            dialog.addWindowFocusListener(new WindowFocusListener() {
-                @Override
-                public void windowGainedFocus(WindowEvent e) {
-                    // No hacer nada cuando el diálogo gana el foco
-                }
-                @Override
-                public void windowLostFocus(WindowEvent e) {
-                    dialog.setVisible(false); // Cerrar el diálogo cuando pierde el foco
-                }
-            });
-            dialog.setVisible(true);
-        }else {
+            ControllerUtils.createJOptionPane("Se han producido los siguientes errores:\n" + fallos, "Error", 1);
+        } else {
             Persistence.add(new RevistasPublicadas(
-                    controlsMap.get("tittle"),
-                    controlsMap.get("formato"),
-                    controlsMap.get("email"),
-                    controlsMap.get("autor"),
-                    controlsMap.get("editorial"),
-                    Integer.parseInt(controlsMap.get("numPaginas")),
-                    Double.parseDouble(controlsMap.get("precio"))));
-            JOptionPane.showMessageDialog(null, "Se ha guardado la revista correctamente", "Información", JOptionPane.INFORMATION_MESSAGE);
+                    controlsMap.get("Titulo"),
+                    controlsMap.get("Formato"),
+                    controlsMap.get("Email"),
+                    controlsMap.get("Autor"),
+                    controlsMap.get("Editorial"),
+                    Integer.parseInt(controlsMap.get("NumPaginas")),
+                    Double.parseDouble(controlsMap.get("Precio"))));
+            ControllerUtils.createJOptionPane("Se ha añadido la revista correctamente", "Correcto", 1);
         }
 
     }
 
-    public void cerrarVentanaBttn(ActionEvent actionEvent) {
+    public void cerrarVentanaBttn() {
         RevistaFormView.getRevistaFormStage().close();
     }
 }

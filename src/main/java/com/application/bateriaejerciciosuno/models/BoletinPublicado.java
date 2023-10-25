@@ -15,4 +15,11 @@ public class BoletinPublicado extends ArticulosPublicados{
     public BoletinPublicado() {
     }
 
+    @Override
+    public String toString() {
+        return "Nombre: " + nombre +
+                "\nFecha: " + fecha +
+                "\nNumero de paginas: " + NumeroDePaginas +
+                "\nPrecio: " + Precio + "€";
+    }
 }
