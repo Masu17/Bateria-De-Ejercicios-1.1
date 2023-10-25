@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" styleClass="root" stylesheets="@../stylesheet/maincss.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.application.bateriaejerciciosuno.controllers.MainController">
+   <Label fx:id="nombre" layoutX="200.0" layoutY="239.0" text="Gestión de articulos">
+      <font>
+         <Font size="50.0" />
+      </font>
+   </Label>
+   <MenuBar layoutY="1.0" prefHeight="27.0" prefWidth="900.0">
+      <menus>
+         <Menu mnemonicParsing="false" text="Revistas">
+            <items>
+               <MenuItem mnemonicParsing="false" onAction="#openRevistaCreator" text="Crear revista" />
+               <MenuItem mnemonicParsing="false" onAction="#openRevistaShow" text="Mostrar revistas" />
+            </items>
+         </Menu>
+         <Menu mnemonicParsing="false" text="Boletines">
+            <items>
+               <MenuItem mnemonicParsing="false" onAction="#openBoletinCreator" text="Crear boletin" />
+               <MenuItem mnemonicParsing="false" onAction="#openBoletinShow" text="Mostrar boletin" />
+            </items>
+         </Menu>
+         <Menu mnemonicParsing="false" text="Salir" />
+      </menus>
+   </MenuBar>
+</AnchorPane>
